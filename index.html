@@ -643,3 +643,131 @@
 
 </body>
 </html>
+<style>
+@media (max-width: 768px) {
+  /* NAV */
+  nav {
+    padding: 16px 20px;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  /* HERO */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-left {
+    padding: 48px 20px;
+  }
+  .hero-headline {
+    font-size: 34px;
+  }
+  .hero-right {
+    min-height: 220px;
+  }
+  .hero-badge {
+    width: 80px;
+    height: 80px;
+    bottom: 16px;
+    right: 16px;
+  }
+  .hero-badge-num { font-size: 20px; }
+  .hero-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-primary, .btn-ghost {
+    text-align: center;
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    padding: 16px 20px;
+    gap: 16px;
+    justify-content: flex-start;
+  }
+  .trust-item {
+    font-size: 13px;
+    width: calc(50% - 8px);
+  }
+
+  /* INTRO */
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 56px 20px;
+  }
+  .intro-left h2 { font-size: 28px; }
+
+  /* STAT CARDS */
+  .intro-right {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 56px 20px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* BEFORE/AFTER */
+  .work {
+    padding: 56px 20px;
+  }
+  .ba-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* TESTIMONIAL */
+  .testimonial-section {
+    padding: 56px 20px;
+  }
+  .testimonial-quote {
+    font-size: 20px;
+  }
+
+  /* CTA FOOTER */
+  .cta-footer {
+    grid-template-columns: 1fr;
+    padding: 48px 20px;
+    text-align: center;
+  }
+  .cta-footer h2 { font-size: 26px; }
+  .cta-footer-btns {
+    align-items: center;
+  }
+  .btn-white { width: 100%; }
+
+  /* FOOTER */
+  footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 24px 20px;
+  }
+
+  /* SECTION HEADERS */
+  .section-header { padding: 0 0 8px; }
+  .section-title { font-size: 26px; }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .trust-item {
+    width: 100%;
+  }
+  .intro-right {
+    grid-template-columns: 1fr;
+  }
+  .stat-card:first-child {
+    grid-column: 1;
+  }
+}
+</style>
