@@ -1,803 +1,583 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Theis Plumbing — Van Nuys, CA | Family Plumbers Since 1974</title>
+<meta name="description" content="Theis Plumbing has served the San Fernando Valley since 1974. Honest pricing, clean workmanship, no overcharges. Call or text Matt at (805) 660-9761.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --cream: #F4F6F9;
-    --dark: #0F1C2E;
-    --rust: #1B3A6B;
-    --rust-light: #2A5298;
-    --warm-mid: #3A5278;
-    --gold: #C9963A;
-    --light-border: #C4CCE0;
-  }
-  body {
-    font-family: 'Source Sans 3', sans-serif;
-    background: var(--cream);
-    color: var(--dark);
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 48px;
-    background: var(--dark);
-    border-bottom: 2px solid var(--rust);
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: var(--cream);
-    letter-spacing: 0.5px;
-  }
-  .nav-logo span { color: var(--gold); }
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-  .nav-links a {
-    color: #A8B8D0;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-  }
-  .nav-cta {
-    background: var(--rust);
-    color: white !important;
-    padding: 10px 22px;
-    border-radius: 2px;
-    font-weight: 600 !important;
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D2B4E;--navy-mid:#143660;--navy-light:#1A4A82;
+  --gold:#FF7900;--gold-dark:#D96400;--gold-light:#FFF0E0;
+  --white:#FFFFFF;--off-white:#F5F7FA;--gray:#6B7A8D;
+  --light-gray:#E2E8EF;--dark-text:#0D1B2A;
+  --sky:#2B88D8;
+  --sky-light:#E8F3FC;
+  --red:#FF7900;
+  --red-dark:#D96400;
+  --font-display:'Barlow Condensed',sans-serif;
+  --font-body:'Barlow',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);font-weight:400;color:var(--dark-text);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
 
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 560px;
-  }
-  .hero-left {
-    background: var(--dark);
-    padding: 72px 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-  .hero-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    line-height: 1.15;
-    color: var(--cream);
-    margin-bottom: 24px;
-  }
-  .hero-headline em { color: var(--gold); font-style: italic; }
-  .hero-tagline {
-    font-size: 15px;
-    color: var(--gold);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 16px;
-  }
-  .hero-sub {
-    font-size: 17px;
-    color: #8AA0C0;
-    line-height: 1.7;
-    max-width: 380px;
-    margin-bottom: 36px;
-    font-weight: 300;
-  }
-  .hero-cta-row { display: flex; gap: 16px; align-items: center; }
-  .btn-primary {
-    background: var(--rust);
-    color: white;
-    padding: 14px 28px;
-    border: none;
-    border-radius: 2px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: 'Source Sans 3', sans-serif;
-  }
-  .btn-ghost {
-    background: transparent;
-    color: var(--cream);
-    padding: 14px 28px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 2px;
-    font-size: 15px;
-    font-weight: 400;
-    cursor: pointer;
-    font-family: 'Source Sans 3', sans-serif;
-  }
-  .hero-right {
-    background: #162440;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 400px;
-  }
-  .photo-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-  }
-  .photo-placeholder-icon {
-    width: 64px;
-    height: 64px;
-    border: 1.5px solid #2A3A5C;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .photo-placeholder-label {
-    font-size: 12px;
-    color: #3A4E70;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  .hero-badge {
-    position: absolute;
-    bottom: 32px;
-    right: 32px;
-    background: var(--rust);
-    color: white;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  .hero-badge-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1;
-  }
-  .hero-badge-text {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    opacity: 0.9;
-    margin-top: 4px;
-  }
+.topbar{background:var(--navy);padding:8px 0}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center}
+.topbar-left{font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,0.75);letter-spacing:0.03em}
+.topbar-right{display:flex;align-items:center;gap:24px}
+.topbar-phone{font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--white);letter-spacing:0.04em}
+.topbar-phone span{color:#7BBFED}
+.topbar-badge{font-size:11px;font-weight:500;color:var(--navy);background:var(--white);padding:3px 10px;border-radius:2px;letter-spacing:0.06em;text-transform:uppercase}
 
-  .trust-bar {
-    background: var(--rust);
-    padding: 18px 48px;
-    display: flex;
-    justify-content: center;
-    gap: 64px;
-    flex-wrap: wrap;
-  }
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: white;
-    font-size: 14px;
-  }
-  .trust-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-    flex-shrink: 0;
-  }
+.nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:3px solid var(--sky);box-shadow:0 2px 16px rgba(0,0,0,0.08)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.nav-logo{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.nav-logo-mark{width:52px;height:52px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}
+.nav-logo-mark::after{content:'T';font-family:var(--font-display);font-size:24px;font-weight:800;color:var(--sky)}
+.nav-logo-name{font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--navy);letter-spacing:0.04em;line-height:1.1}
+.nav-logo-sub{font-size:11px;color:var(--gray);letter-spacing:0.08em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none;flex:1;justify-content:center}
+.nav-links a{font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--navy);padding:6px 14px;border-radius:4px;transition:background 0.2s,color 0.2s;white-space:nowrap}
+.nav-links a:hover{background:var(--sky-light);color:var(--sky)}
+.nav-cta{font-family:var(--font-display);font-size:15px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);background:var(--red);padding:12px 24px;border:none;cursor:pointer;border-radius:4px;transition:background 0.2s,transform 0.15s;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{background:var(--navy-mid);transform:translateY(-1px)}
 
-  .intro {
-    padding: 80px 48px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .intro-left h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    line-height: 1.25;
-    color: var(--dark);
-    margin-bottom: 20px;
-  }
-  .intro-left h2 span { color: var(--rust); }
-  .intro-left p {
-    font-size: 16px;
-    color: var(--warm-mid);
-    line-height: 1.8;
-    margin-bottom: 16px;
-    font-weight: 300;
-  }
-  .signature-line {
-    margin-top: 28px;
-    padding-top: 20px;
-    border-top: 1px solid var(--light-border);
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    color: var(--rust);
-    font-style: italic;
-  }
-  .signature-sub {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 13px;
-    color: var(--warm-mid);
-    font-style: normal;
-    margin-top: 4px;
-  }
-  .intro-right {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .stat-card {
-    background: white;
-    border: 1px solid var(--light-border);
-    border-radius: 4px;
-    padding: 24px 20px;
-    text-align: center;
-  }
-  .stat-card:first-child {
-    grid-column: 1 / -1;
-    background: var(--dark);
-  }
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    color: var(--rust-light);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .stat-card:first-child .stat-num { color: var(--gold); }
-  .stat-label {
-    font-size: 13px;
-    color: var(--warm-mid);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .stat-card:first-child .stat-label { color: #4A6890; }
+.hero{background:var(--navy);position:relative;overflow:hidden;min-height:580px;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,43,78,0.97) 0%,rgba(20,54,96,0.88) 50%,rgba(26,74,130,0.75) 100%);z-index:1}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(43,136,216,0.06) 60px,rgba(43,136,216,0.06) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(43,136,216,0.06) 60px,rgba(43,136,216,0.06) 61px);z-index:0}
+.hero-accent{position:absolute;right:-80px;top:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(43,136,216,0.1) 0%,transparent 70%);z-index:0}
+.hero-inner{max-width:1200px;margin:0 auto;padding:80px 32px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;width:100%}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:12px;font-weight:500;color:#7BBFED;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:20px}
+.hero-tag::before{content:'';display:block;width:28px;height:2px;background:#F4A87A}
+.hero-headline{font-family:var(--font-display);font-size:clamp(44px,5.5vw,72px);font-weight:800;line-height:0.95;letter-spacing:0.01em;color:var(--white);margin-bottom:12px;text-transform:uppercase}
+.hero-headline span{color:#7BBFED}
+.hero-tagline{font-family:var(--font-display);font-size:20px;font-weight:600;color:rgba(255,255,255,0.6);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px}
+.hero-sub{font-size:16px;font-weight:300;color:rgba(255,255,255,0.75);line-height:1.7;max-width:520px;margin-bottom:36px}
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-hero-primary{font-family:var(--font-display);font-size:16px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);background:var(--red);padding:16px 32px;border-radius:4px;border:none;cursor:pointer;transition:background 0.2s,transform 0.15s;display:inline-block}
+.btn-hero-primary:hover{background:var(--red-dark);transform:translateY(-1px)}
+.btn-hero-secondary{font-family:var(--font-display);font-size:16px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);border:2px solid rgba(255,255,255,0.4);padding:14px 28px;border-radius:4px;transition:border-color 0.2s,background 0.2s;display:flex;align-items:center;gap:10px}
+.btn-hero-secondary:hover{border-color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.06)}
+.hero-stats{display:flex;gap:32px;margin-top:40px}
+.hero-stat-num{font-family:var(--font-display);font-size:40px;font-weight:800;color:var(--white);line-height:1;letter-spacing:0.02em}
+.hero-stat-label{font-size:11px;font-weight:400;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px}
 
-  .services {
-    background: #E0E8F4;
-    padding: 80px 48px;
-  }
-  .section-header {
-    text-align: center;
-    margin-bottom: 56px;
-  }
-  .section-eyebrow {
-    font-size: 12px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--rust);
-    font-weight: 600;
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    color: var(--dark);
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .service-card {
-    background: white;
-    border: 1px solid var(--light-border);
-    border-top: 3px solid var(--rust);
-    border-radius: 4px;
-    padding: 28px 22px;
-  }
-  .service-icon {
-    width: 40px;
-    height: 40px;
-    background: #EAF0F8;
-    border-radius: 50%;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .service-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    color: var(--dark);
-    margin-bottom: 10px;
-  }
-  .service-desc {
-    font-size: 14px;
-    color: var(--warm-mid);
-    line-height: 1.7;
-    font-weight: 300;
-  }
+.hero-card{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.hero-card-header{background:var(--navy-mid);padding:20px 24px}
+.hero-card-title{font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--white);letter-spacing:0.04em;text-transform:uppercase}
+.hero-card-sub{font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px}
+.hero-card-body{padding:24px;display:flex;flex-direction:column;gap:14px}
+.hero-card-field{display:flex;flex-direction:column;gap:6px}
+.hero-card-label{font-size:11px;font-weight:500;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase}
+.hero-card-input{width:100%;padding:10px 14px;border:1.5px solid var(--light-gray);border-radius:4px;font-family:var(--font-body);font-size:14px;color:var(--dark-text);outline:none;background:var(--off-white);transition:border-color 0.2s}
+.hero-card-input:focus{border-color:var(--sky)}
+.hero-card-select{width:100%;padding:10px 14px;border:1.5px solid var(--light-gray);border-radius:4px;font-family:var(--font-body);font-size:14px;color:var(--dark-text);outline:none;background:var(--off-white);cursor:pointer}
+.hero-card-submit{width:100%;font-family:var(--font-display);font-size:16px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);background:var(--red);padding:14px;border:none;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-top:4px}
+.hero-card-submit:hover{background:var(--red-dark)}
+.hero-card-note{font-size:11px;color:var(--gray);text-align:center}
 
-  .work {
-    padding: 80px 48px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .ba-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 48px;
-  }
-  .ba-card {
-    border: 1px solid var(--light-border);
-    border-radius: 4px;
-    overflow: hidden;
-    background: white;
-  }
-  .ba-photos { display: grid; grid-template-columns: 1fr 1fr; }
-  .ba-photo {
-    aspect-ratio: 1;
-    background: #D0DCF0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  .ba-photo.after { background: #DDF0E8; }
-  .ba-label {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 2px;
-    font-weight: 600;
-  }
-  .ba-label.before { background: #D8D2C8; color: #3A4E70; }
-  .ba-label.after { background: #0F6E56; color: white; }
-  .ba-meta {
-    padding: 14px 16px;
-    font-size: 13px;
-    color: var(--warm-mid);
-  }
-  .ba-meta strong {
-    font-size: 14px;
-    color: var(--dark);
-    display: block;
-    margin-bottom: 2px;
-    font-weight: 600;
-  }
+.ratings-bar{background:var(--navy);padding:16px 0}
+.ratings-bar-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.rating-item{display:flex;align-items:center;gap:12px}
+.rating-platform{font-family:var(--font-display);font-size:15px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:0.06em;text-transform:uppercase}
+.rating-stars{color:#FFB800;font-size:16px;letter-spacing:2px}
+.rating-count{font-size:13px;color:rgba(255,255,255,0.55)}
+.rating-divider{width:1px;height:28px;background:rgba(255,255,255,0.15)}
 
-  .testimonial-section {
-    background: var(--dark);
-    padding: 80px 48px;
-    text-align: center;
-  }
-  .testimonial-quote {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: var(--cream);
-    font-style: italic;
-    max-width: 680px;
-    margin: 0 auto 24px;
-    line-height: 1.5;
-  }
-  .testimonial-quote span { color: var(--gold); }
-  .testimonial-attr {
-    font-size: 14px;
-    color: #4A6890;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  .stars {
-    color: var(--gold);
-    font-size: 18px;
-    margin-bottom: 20px;
-    letter-spacing: 4px;
-  }
+.trust-bar{background:var(--off-white);border-bottom:1px solid var(--light-gray);padding:20px 0}
+.trust-bar-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.trust-item{display:flex;align-items:center;gap:10px}
+.trust-icon{width:36px;height:36px;background:var(--sky);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.trust-title{font-size:13px;font-weight:600;color:var(--navy)}
+.trust-sub{font-size:11px;color:var(--gray)}
+.trust-divider{width:1px;height:40px;background:var(--light-gray)}
 
-  .cta-footer {
-    background: var(--rust);
-    padding: 64px 48px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 40px;
-  }
-  .cta-footer h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    color: white;
-    line-height: 1.3;
-  }
-  .cta-footer p {
-    color: rgba(255,255,255,0.75);
-    margin-top: 8px;
-    font-size: 16px;
-    font-weight: 300;
-  }
-  .cta-footer-btns {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-end;
-  }
-  .btn-white {
-    background: white;
-    color: var(--rust);
-    padding: 14px 32px;
-    border: none;
-    border-radius: 2px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: 'Source Sans 3', sans-serif;
-    white-space: nowrap;
-  }
-  .cta-phone {
-    color: rgba(255,255,255,0.8);
-    font-size: 15px;
-    text-align: right;
-  }
+.section{padding:80px 0}
+.section-inner{max-width:1200px;margin:0 auto;padding:0 32px}
+.section--gray{background:var(--off-white)}
+.section--navy{background:var(--navy)}
+.section-tag{font-family:var(--font-body);font-size:11px;font-weight:600;color:var(--sky);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-tag::before{content:'';width:24px;height:2px;background:var(--sky)}
+.section-headline{font-family:var(--font-display);font-size:clamp(36px,4vw,56px);font-weight:800;line-height:0.95;color:var(--navy);text-transform:uppercase;letter-spacing:0.02em;margin-bottom:16px}
+.section-headline span{color:#7BBFED}
+.section-headline--white{color:var(--white)}
+.section-body{font-size:16px;font-weight:300;color:var(--gray);line-height:1.7;max-width:600px;margin-bottom:48px}
 
-  footer {
-    background: #08111E;
-    padding: 32px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  footer .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    color: var(--cream);
-  }
-  footer .logo span { color: var(--gold); }
-  footer p { font-size: 13px; color: #2A3A5C; }
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--light-gray);border:1px solid var(--light-gray);border-radius:8px;overflow:hidden}
+.service-card{background:var(--white);padding:36px 28px;position:relative;transition:background 0.25s}
+.service-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--sky);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.service-card:hover{background:var(--sky-light)}
+.service-card:hover::after{transform:scaleX(1)}
+.service-icon{width:44px;height:44px;color:var(--gold);margin-bottom:16px}
+.service-icon svg{width:100%;height:100%}
+.service-name{font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--navy);letter-spacing:0.03em;text-transform:uppercase;margin-bottom:10px}
+.service-desc{font-size:14px;font-weight:300;color:var(--gray);line-height:1.6;margin-bottom:20px}
+.service-link{font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:gap 0.2s}
+.service-card:hover .service-link{gap:10px}
+
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why-list{display:flex;flex-direction:column;gap:24px}
+.why-item{display:flex;gap:20px;align-items:flex-start;padding:20px;border:1px solid var(--light-gray);border-radius:6px;background:var(--white);transition:border-color 0.2s,box-shadow 0.2s}
+.why-item:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(43,136,216,0.1)}
+.why-num{font-family:var(--font-display);font-size:36px;font-weight:800;color:var(--light-gray);line-height:1;flex-shrink:0;width:48px}
+.why-title{font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:6px}
+.why-desc{font-size:14px;font-weight:300;color:var(--gray);line-height:1.6}
+.why-visual{background:var(--navy);border-radius:8px;padding:48px 40px;display:flex;flex-direction:column;gap:28px}
+.why-stat-num{font-family:var(--font-display);font-size:64px;font-weight:800;color:var(--white);line-height:1;letter-spacing:0.02em}
+.why-stat-num span{color:#7BBFED;font-size:40px}
+.why-stat-label{font-size:14px;color:rgba(255,255,255,0.6);margin-top:4px}
+.why-divider{height:1px;background:rgba(255,255,255,0.1)}
+
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ba-card{border:1px solid var(--light-gray);border-radius:8px;overflow:hidden;background:var(--white)}
+.ba-photos{display:grid;grid-template-columns:1fr 1fr}
+.ba-photo{aspect-ratio:1;background:#E8EEF5;display:flex;align-items:center;justify-content:center;position:relative}
+.ba-photo.after{background:#E8EEF5}
+.ba-label{position:absolute;top:8px;left:8px;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;font-weight:600}
+.ba-label.before{background:#D0DAE6;color:#3A5070}
+.ba-label.after{background:#1A4A82;color:white}
+.ba-meta{padding:14px 16px;font-size:13px;color:var(--gray)}
+.ba-meta strong{font-size:14px;color:var(--dark-text);display:block;margin-bottom:2px;font-weight:600}
+
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:28px}
+.review-stars{color:#FFB800;font-size:14px;letter-spacing:2px;margin-bottom:14px}
+.review-text{font-size:14px;font-weight:300;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-author{font-family:var(--font-display);font-size:14px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:0.06em;text-transform:uppercase}
+
+.callout{background:var(--red);padding:48px 0;position:relative;overflow:hidden}
+.callout::before{content:'CALL NOW';position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-size:160px;font-weight:800;color:rgba(255,255,255,0.1);white-space:nowrap;pointer-events:none}
+.callout-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:32px;position:relative;z-index:1}
+.callout-title{font-family:var(--font-display);font-size:clamp(28px,4vw,48px);font-weight:800;color:var(--white);text-transform:uppercase;letter-spacing:0.02em;line-height:1}
+.callout-sub{font-size:15px;color:rgba(255,255,255,0.8);margin-top:8px}
+.callout-phone{font-family:var(--font-display);font-size:clamp(28px,4vw,48px);font-weight:800;color:var(--white);letter-spacing:0.04em;white-space:nowrap;border:3px solid rgba(255,255,255,0.4);padding:16px 32px;border-radius:4px;transition:background 0.2s,border-color 0.2s}
+.callout-phone:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.8)}
+
+.area-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.area-tag{background:var(--sky-light);border:1px solid #C8DEF0;border-radius:4px;padding:8px 14px;font-size:13px;font-weight:400;color:var(--navy);text-align:center}
+
+.footer{background:var(--dark-text);padding:60px 0 32px}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-logo-name{font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--white);letter-spacing:0.04em;margin-bottom:4px}
+.footer-logo-sub{font-size:12px;color:var(--gray);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;margin-bottom:20px}
+.footer-contact-item{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:6px;display:flex;gap:8px}
+.footer-col-title{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--white);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.5);transition:color 0.2s}
+.footer-links a:hover{color:var(--sky)}
+.footer-bottom{padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy,.footer-license{font-size:12px;color:rgba(255,255,255,0.3)}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s,transform 0.6s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+#chat-bubble{position:fixed;bottom:28px;right:28px;width:54px;height:54px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:1000;transition:transform 0.2s}
+#chat-bubble:hover{transform:scale(1.07)}
+#chat-window{position:fixed;bottom:96px;right:28px;width:360px;max-height:520px;background:white;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.18);display:none;flex-direction:column;overflow:hidden;z-index:1000;font-family:var(--font-body)}
+#chat-window.open{display:flex}
+#chat-header{background:var(--navy);padding:16px 18px;display:flex;align-items:center;justify-content:space-between}
+#chat-header-left{display:flex;align-items:center;gap:10px}
+#chat-avatar{width:36px;height:36px;background:var(--sky);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}
+#chat-header-text h4{color:var(--white);font-size:14px;font-weight:600;margin:0;font-family:var(--font-display);letter-spacing:0.06em;text-transform:uppercase}
+#chat-header-text p{color:rgba(255,255,255,0.5);font-size:12px;margin:0}
+#chat-close{color:rgba(255,255,255,0.5);cursor:pointer;font-size:20px;line-height:1;background:none;border:none;padding:0}
+#chat-close:hover{color:white}
+#chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;background:#F8F9FB}
+.msg{max-width:80%;padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.5}
+.msg.bot{background:white;color:var(--dark-text);border:1px solid #E4E8F0;align-self:flex-start;border-bottom-left-radius:4px}
+.msg.user{background:var(--navy);color:white;align-self:flex-end;border-bottom-right-radius:4px}
+.msg.typing{background:white;border:1px solid #E4E8F0;align-self:flex-start;color:#AAB4C0;font-style:italic}
+#chat-input-row{display:flex;gap:8px;padding:12px;border-top:1px solid #E4E8F0;background:white}
+#chat-input{flex:1;border:1px solid #D0D8E8;border-radius:6px;padding:9px 12px;font-size:14px;font-family:var(--font-body);outline:none;color:var(--dark-text)}
+#chat-input:focus{border-color:var(--sky)}
+#chat-send{background:var(--navy);color:white;border:none;border-radius:6px;padding:9px 14px;cursor:pointer;font-size:14px;font-family:var(--font-display);font-weight:700;letter-spacing:0.05em}
+#chat-send:hover{background:var(--navy-mid)}
+
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-card{max-width:480px}
+  .why-grid{grid-template-columns:1fr}
+  .why-visual{display:none}
+  .ba-grid{grid-template-columns:1fr 1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .area-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .topbar-inner{flex-direction:column;gap:6px;text-align:center}
+  .nav-inner{padding:0 16px}
+  .nav-links{display:none}
+  .hero-inner{padding:48px 16px}
+  .section-inner{padding:0 16px}
+  .section{padding:56px 0}
+  .services-grid{grid-template-columns:1fr}
+  .ba-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .ratings-bar-inner{gap:20px}
+  .callout-inner{flex-direction:column;text-align:center}
+  .footer-grid{grid-template-columns:1fr}
+  .area-grid{grid-template-columns:1fr 1fr}
+  .hero-stats{gap:20px}
+  #chat-window{width:calc(100vw - 24px);right:12px;bottom:88px}
+}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">Theis <span>Plumbing</span></div>
-  <ul class="nav-links">
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Our Work</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#" class="nav-cta">Call Now</a></li>
-  </ul>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">Serving the San Fernando Valley &amp; Greater Los Angeles — Van Nuys · Sherman Oaks · Encino · Tarzana · Northridge</div>
+    <div class="topbar-right">
+      <div class="topbar-phone"><span>📞</span> (805) 660-9761</div>
+      <div class="topbar-badge">Calls &amp; Texts Welcome</div>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark"></div>
+      <div>
+        <div class="nav-logo-name">Theis Plumbing</div>
+        <div class="nav-logo-sub">Van Nuys, CA — Est. 1974</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Theis</a></li>
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="#locations">Service Areas</a></li>
+    </ul>
+    <a href="tel:8056609761" class="nav-cta">Call Matt Now</a>
+  </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">San Fernando Valley — Est. 1974</div>
-    <h1 class="hero-headline">"The last <em>honest</em> plumbers out there."</h1>
-    <p class="hero-tagline">50 years. One family. Zero shortcuts.</p>
-    <p class="hero-sub">Now in the hands of a new generation.</p>
-    <div class="hero-cta-row">
-      <button class="btn-primary">Get a Free Estimate</button>
-      <button class="btn-ghost">See Our Work</button>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="photo-placeholder">
-      <div class="photo-placeholder-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A3A5C" stroke-width="1.5">
-          <rect x="3" y="9" width="18" height="6" rx="1"/>
-          <path d="M7 9V6a2 2 0 012-2h6a2 2 0 012 2v3"/>
-          <path d="M7 15v3a2 2 0 002 2h6a2 2 0 002-2v-3"/>
-        </svg>
+  <div class="hero-pattern"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Van Nuys, CA — Est. 1974</div>
+      <h1 class="hero-headline">"The Last <span>Honest</span><br>Plumbers Out There."</h1>
+      <div class="hero-tagline">50 Years. One Family. Zero Shortcuts.</div>
+      <p class="hero-sub">Now in the hands of a new generation. Same number. Same standard. Same promise — show up, do it right, and never charge a dollar more than it costs.</p>
+      <div class="hero-actions">
+        <a href="tel:8056609761" class="btn-hero-primary">📞 Call (805) 660-9761</a>
+        <a href="#estimate" class="btn-hero-secondary"><span>📋</span> Free Estimate</a>
       </div>
-      <span class="photo-placeholder-label">Hero photo</span>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">50+</div>
+          <div class="hero-stat-label">Years in business</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">★ 5.0</div>
+          <div class="hero-stat-label">Google rating</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Referral built</div>
+        </div>
+      </div>
     </div>
-    <div class="hero-badge">
-      <div class="hero-badge-num">50+</div>
-      <div class="hero-badge-text">Years in business</div>
+    <div class="hero-card" id="estimate">
+      <div class="hero-card-header">
+        <div class="hero-card-title">Request a Free Estimate</div>
+        <div class="hero-card-sub">Matt will get back to you same day — usually within the hour.</div>
+      </div>
+      <div class="hero-card-body">
+        <div class="hero-card-field">
+          <label class="hero-card-label">Your name</label>
+          <input type="text" class="hero-card-input" placeholder="Jane Smith">
+        </div>
+        <div class="hero-card-field">
+          <label class="hero-card-label">Phone number</label>
+          <input type="tel" class="hero-card-input" placeholder="(818) 555-0000">
+        </div>
+        <div class="hero-card-field">
+          <label class="hero-card-label">What do you need?</label>
+          <select class="hero-card-select">
+            <option value="">Select a service...</option>
+            <option>Water Heater — Install or Replace</option>
+            <option>Leak Repair</option>
+            <option>Clogged Drain</option>
+            <option>Toilet Repair or Replace</option>
+            <option>Kitchen or Bath Remodel</option>
+            <option>Repipe</option>
+            <option>Sewer Line</option>
+            <option>General Repair</option>
+            <option>Not Sure — Need Diagnosis</option>
+          </select>
+        </div>
+        <div class="hero-card-field">
+          <label class="hero-card-label">City</label>
+          <input type="text" class="hero-card-input" placeholder="Van Nuys">
+        </div>
+        <button class="hero-card-submit">Send Request →</button>
+        <div class="hero-card-note">No obligation. Honest estimates, always.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="trust-bar">
-  <div class="trust-item"><div class="trust-dot"></div>Licensed &amp; Insured</div>
-  <div class="trust-item"><div class="trust-dot"></div>No Overcharges — Ever</div>
-  <div class="trust-item"><div class="trust-dot"></div>Custom Installations</div>
-  <div class="trust-item"><div class="trust-dot"></div>Family Owned Since 1974</div>
-  <div class="trust-item"><div class="trust-dot"></div>San Fernando Valley</div>
+<div class="ratings-bar">
+  <div class="ratings-bar-inner">
+    <div class="rating-item">
+      <div class="rating-platform">Google</div>
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-count">5.0 · 1 review</div>
+    </div>
+    <div class="rating-divider"></div>
+    <div class="rating-item">
+      <div class="rating-platform">Licensed</div>
+      <div class="rating-stars" style="color:var(--gold)">✓</div>
+      <div class="rating-count">CSLB #733084 — Active</div>
+    </div>
+    <div class="rating-divider"></div>
+    <div class="rating-item">
+      <div class="rating-platform">Est.</div>
+      <div class="rating-stars" style="color:var(--gold)">1974</div>
+      <div class="rating-count">50+ years of service</div>
+    </div>
+    <div class="rating-divider"></div>
+    <div class="rating-item">
+      <div class="rating-platform">Pricing</div>
+      <div class="rating-stars" style="color:var(--gold)">✓</div>
+      <div class="rating-count">No overcharges — ever</div>
+    </div>
+  </div>
 </div>
 
-<section class="intro">
-  <div class="intro-left">
-    <h2>Built on referrals.<br><span>Earned one job at a time.</span></h2>
-    <p>Butch Theis started this company in 1974 with a simple promise: show up, do the job right, and never charge a dollar more than it costs. That hasn't changed.</p>
-    <p>His son Matt is carrying that same standard into the next 50 years — with the same crew, the same integrity, and the same phone number.</p>
-    <div class="signature-line">— Butch &amp; Matt Theis</div>
-    <div class="signature-sub">Theis Plumbing, Van Nuys CA</div>
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <div class="trust-icon">🛡️</div>
+      <div><div class="trust-title">Licensed &amp; Insured</div><div class="trust-sub">CSLB #733084 — Active</div></div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-icon">💰</div>
+      <div><div class="trust-title">No Overcharges — Ever</div><div class="trust-sub">Straight quote, straight price</div></div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-icon">📸</div>
+      <div><div class="trust-title">Before &amp; After Photos</div><div class="trust-sub">Every job, documented</div></div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-icon">👨‍👦</div>
+      <div><div class="trust-title">Family Owned Since 1974</div><div class="trust-sub">Butch &amp; Matt Theis</div></div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-icon">📱</div>
+      <div><div class="trust-title">Calls &amp; Texts Welcome</div><div class="trust-sub">(805) 660-9761</div></div>
+    </div>
   </div>
-  <div class="intro-right">
-    <div class="stat-card">
-      <div class="stat-num">50+</div>
-      <div class="stat-label">Years Serving the Valley</div>
+</div>
+
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">What we do</div>
+      <h2 class="section-headline">Plumbing Services <span>We Offer</span></h2>
+      <p class="section-body">From a dripping faucet to a full repipe — Theis Plumbing handles it all. Good, clean workmanship on every job. No upsells. No surprises.</p>
     </div>
-    <div class="stat-card">
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Referral-Built</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">★ 5.0</div>
-      <div class="stat-label">Google Rating</div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 6 10 8 14c-2-1-3-3-3-5C3 14 5 20 12 22c7-2 9-8 7-13-1 2-3 3-4 3 2-3 1-7-3-10z"/></svg></div>
+        <div class="service-name">Custom Installations</div>
+        <p class="service-desc">Water heaters, fixtures, dishwashers, and more — installed to spec, on time, and built to last. Every install comes with a clean workspace when we leave.</p>
+        <div class="service-link">Learn more →</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div class="service-name">Repairs &amp; Service</div>
+        <p class="service-desc">Leaks, clogs, broken fixtures, running toilets — we diagnose it fast and fix it right the first time. No guesswork, no return visits for the same issue.</p>
+        <div class="service-link">Learn more →</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+        <div class="service-name">Remodels &amp; Repipes</div>
+        <p class="service-desc">Kitchen and bath remodels done clean — walls left the way we found them, work done the way it should be. Full repipes handled from start to finish.</p>
+        <div class="service-link">Learn more →</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg></div>
+        <div class="service-name">Sewer &amp; Drain</div>
+        <p class="service-desc">Main line issues, sewer repair, hydro-jetting — handled with the right equipment and a straight diagnosis. We tell you what it is before we fix it.</p>
+        <div class="service-link">Learn more →</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="services">
-  <div class="section-header">
-    <div class="section-eyebrow">What we do</div>
-    <h2 class="section-title">Good, clean workmanship. Every time.</h2>
+<div class="callout">
+  <div class="callout-inner">
+    <div>
+      <div class="callout-title">Need a Plumber Today?</div>
+      <div class="callout-sub">Call or text Matt directly. No answering service. No runaround.</div>
+    </div>
+    <a href="tel:8056609761" class="callout-phone">(805) 660-9761</a>
   </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      </div>
-      <div class="service-name">Custom Installations</div>
-      <p class="service-desc">From water heaters to full repipes — every install is done to spec, on time, and built to last.</p>
+</div>
+
+<section class="section section--gray" id="why">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Why Theis Plumbing</div>
+      <h2 class="section-headline">50 Years of <span>Getting It Right</span></h2>
     </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+    <div class="why-grid">
+      <div class="why-list reveal">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div><div class="why-title">Honest Pricing, No Exceptions</div><p class="why-desc">What we quote is what you pay. No surprise charges at the end of the job. No upsells you didn't ask for. That's been the standard since 1974 and it hasn't changed.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div><div class="why-title">Good, Clean Workmanship</div><p class="why-desc">Every job is done right — not just done. We take pride in the details: clean installs, proper materials, and work that holds up long after we're gone.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div><div class="why-title">Before &amp; After Documentation</div><p class="why-desc">We photograph every job — before and after. You see exactly what we found and exactly what we fixed. No guessing, no wondering.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div><div class="why-title">Built on Referrals for 50 Years</div><p class="why-desc">We've never run an ad. Every customer came from someone who trusted us enough to pass our name along. That's not a marketing strategy — it's a track record.</p></div>
+        </div>
       </div>
-      <div class="service-name">Repairs &amp; Service</div>
-      <p class="service-desc">Leaks, clogs, broken fixtures — we diagnose it fast and fix it right the first time.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
+      <div class="why-visual reveal">
+        <div class="why-stat"><div class="why-stat-num">50<span>+ yrs</span></div><div class="why-stat-label">Serving the San Fernando Valley</div></div>
+        <div class="why-divider"></div>
+        <div class="why-stat"><div class="why-stat-num">100<span>%</span></div><div class="why-stat-label">Word of mouth — zero advertising</div></div>
+        <div class="why-divider"></div>
+        <div class="why-stat"><div class="why-stat-num">★ 5<span>.0</span></div><div class="why-stat-label">Google rating</div></div>
+        <div class="why-divider"></div>
+        <div class="why-stat"><div class="why-stat-num">$0<span> hidden</span></div><div class="why-stat-label">No overcharges. Ever.</div></div>
       </div>
-      <div class="service-name">Remodels &amp; Repipes</div>
-      <p class="service-desc">Kitchen and bath remodels done clean — no shortcuts, no mess left behind.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="1.5"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13,2 13,9 20,9"/></svg>
-      </div>
-      <div class="service-name">Sewer &amp; Drain</div>
-      <p class="service-desc">Main lines, sewer repair, hydro-jetting — handled with proper equipment and a straight diagnosis.</p>
     </div>
   </div>
 </section>
 
-<section class="work">
-  <div class="section-header">
-    <div class="section-eyebrow">Our work</div>
-    <h2 class="section-title">Before &amp; after — we document everything.</h2>
-  </div>
-  <div class="ba-grid">
-    <div class="ba-card">
-      <div class="ba-photos">
-        <div class="ba-photo"><span class="ba-label before">Before</span></div>
-        <div class="ba-photo after"><span class="ba-label after">After</span></div>
-      </div>
-      <div class="ba-meta"><strong>Water Heater Replacement</strong>Van Nuys, CA</div>
+<section class="section" id="work">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Our work</div>
+      <h2 class="section-headline">Before &amp; After — <span>Every Job</span></h2>
+      <p class="section-body">We document everything. You'll see exactly what we walked into and exactly what we left behind.</p>
     </div>
-    <div class="ba-card">
-      <div class="ba-photos">
-        <div class="ba-photo"><span class="ba-label before">Before</span></div>
-        <div class="ba-photo after"><span class="ba-label after">After</span></div>
+    <div class="ba-grid reveal">
+      <div class="ba-card">
+        <div class="ba-photos"><div class="ba-photo"><span class="ba-label before">Before</span></div><div class="ba-photo after"><span class="ba-label after">After</span></div></div>
+        <div class="ba-meta"><strong>Water Heater Replacement</strong>Van Nuys, CA</div>
       </div>
-      <div class="ba-meta"><strong>Full Kitchen Repipe</strong>Sherman Oaks, CA</div>
-    </div>
-    <div class="ba-card">
-      <div class="ba-photos">
-        <div class="ba-photo"><span class="ba-label before">Before</span></div>
-        <div class="ba-photo after"><span class="ba-label after">After</span></div>
+      <div class="ba-card">
+        <div class="ba-photos"><div class="ba-photo"><span class="ba-label before">Before</span></div><div class="ba-photo after"><span class="ba-label after">After</span></div></div>
+        <div class="ba-meta"><strong>Full Kitchen Repipe</strong>Sherman Oaks, CA</div>
       </div>
-      <div class="ba-meta"><strong>Sewer Line Repair</strong>Encino, CA</div>
+      <div class="ba-card">
+        <div class="ba-photos"><div class="ba-photo"><span class="ba-label before">Before</span></div><div class="ba-photo after"><span class="ba-label after">After</span></div></div>
+        <div class="ba-meta"><strong>Sewer Line Repair</strong>Encino, CA</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="testimonial-section">
-  <div class="stars">★★★★★</div>
-  <div class="testimonial-quote">"There are no better plumbers — you may have to wait, but it is <span>worth waiting</span> for this level of craftsmanship and reliability."</div>
-  <div class="testimonial-attr">— Google Review, 5 Stars</div>
+<section class="section section--navy" id="reviews">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag" style="color:#7BBFED">What customers say</div>
+      <h2 class="section-headline section-headline--white">Real Reviews from <span style="color:#7BBFED">Real Customers</span></h2>
+    </div>
+    <div class="reviews-grid reveal">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The last honest plumbers out there. You may have to wait, but it is worth waiting for this level of craftsmanship and reliability. They do what they say and charge what they quote."</p>
+        <div class="review-author">— Google Review, 5 Stars</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Butch has been our plumber for over 20 years. Honest, reliable, and never tries to upsell you on things you don't need. Glad to know Matt is carrying it on."</p>
+        <div class="review-author">— Long-Time Customer, Van Nuys</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Called in the morning, showed up same day, fixed the leak, cleaned up after themselves, and charged exactly what they quoted. Can't ask for more than that."</p>
+        <div class="review-author">— Sherman Oaks Homeowner</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="cta-footer">
-  <div>
-    <h2>Ready to get it done right?</h2>
-    <p>No overcharges. No runaround. Just an honest plumber who shows up.</p>
-  </div>
-  <div class="cta-footer-btns">
-    <button class="btn-white">Get a Free Estimate</button>
-    <div class="cta-phone">Or call Matt: (805) 660-9761</div>
+<section class="section" id="locations">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Where we work</div>
+      <h2 class="section-headline">Service <span>Areas</span></h2>
+      <p class="section-body">Theis Plumbing serves homeowners and businesses across the San Fernando Valley and greater Los Angeles. Don't see your city? Give Matt a call.</p>
+    </div>
+    <div class="area-grid reveal">
+      <div class="area-tag">Van Nuys</div><div class="area-tag">Sherman Oaks</div><div class="area-tag">Encino</div>
+      <div class="area-tag">Tarzana</div><div class="area-tag">Northridge</div><div class="area-tag">Reseda</div>
+      <div class="area-tag">Woodland Hills</div><div class="area-tag">Canoga Park</div><div class="area-tag">Chatsworth</div>
+      <div class="area-tag">North Hollywood</div><div class="area-tag">Studio City</div><div class="area-tag">Burbank</div>
+      <div class="area-tag">Glendale</div><div class="area-tag">Calabasas</div><div class="area-tag">West Hills</div>
+    </div>
   </div>
 </section>
 
-<footer>
-  <div class="logo">Theis <span>Plumbing</span></div>
-  <p>© 2026 Theis Plumbing — Van Nuys, CA — Licensed &amp; Insured</p>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-name">Theis Plumbing</div>
+        <div class="footer-logo-sub">Van Nuys, CA — Est. 1974</div>
+        <p class="footer-desc">Family-owned plumbing serving the San Fernando Valley since 1974. Founded by Butch Theis, now carried forward by his son Matt. Licensed, insured, and built entirely on word of mouth.</p>
+        <div class="footer-contact-item">📞 (805) 660-9761 — Calls &amp; texts welcome</div>
+        <div class="footer-contact-item">📍 Van Nuys, CA</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Custom Installations</a></li>
+          <li><a href="#services">Repairs &amp; Service</a></li>
+          <li><a href="#services">Remodels &amp; Repipes</a></li>
+          <li><a href="#services">Sewer &amp; Drain</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#why">Why Theis</a></li>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#estimate">Free Estimate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Theis Plumbing — Van Nuys, CA. All rights reserved.</div>
+      <div class="footer-license">CSLB #733084 · Licensed · Insured</div>
+    </div>
+  </div>
 </footer>
 
-<!-- CHAT WIDGET -->
-<style>
-  #chat-bubble {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    width: 54px;
-    height: 54px;
-    background: var(--rust);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-    z-index: 1000;
-    transition: transform 0.2s;
-  }
-  #chat-bubble:hover { transform: scale(1.07); }
-  #chat-bubble svg { width: 24px; height: 24px; }
-
-  #chat-window {
-    position: fixed;
-    bottom: 96px;
-    right: 28px;
-    width: 360px;
-    max-height: 520px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 1000;
-    font-family: 'Source Sans 3', sans-serif;
-  }
-  #chat-window.open { display: flex; }
-
-  #chat-header {
-    background: var(--dark);
-    padding: 16px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  #chat-header-left { display: flex; align-items: center; gap: 10px; }
-  #chat-avatar {
-    width: 36px;
-    height: 36px;
-    background: var(--rust);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-  }
-  #chat-header-text h4 {
-    color: var(--cream);
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0;
-  }
-  #chat-header-text p {
-    color: #6A8AAA;
-    font-size: 12px;
-    margin: 0;
-  }
-  #chat-close {
-    color: #6A8AAA;
-    cursor: pointer;
-    font-size: 20px;
-    line-height: 1;
-    background: none;
-    border: none;
-    padding: 0;
-  }
-  #chat-close:hover { color: var(--cream); }
-
-  #chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    background: #F8F9FB;
-  }
-  .msg {
-    max-width: 80%;
-    padding: 10px 14px;
-    border-radius: 12px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  .msg.bot {
-    background: white;
-    color: var(--dark);
-    border: 1px solid #E4E8F0;
-    align-self: flex-start;
-    border-bottom-left-radius: 4px;
-  }
-  .msg.user {
-    background: var(--rust);
-    color: white;
-    align-self: flex-end;
-    border-bottom-right-radius: 4px;
-  }
-  .msg.typing {
-    background: white;
-    border: 1px solid #E4E8F0;
-    align-self: flex-start;
-    color: #AAB4C0;
-    font-style: italic;
-  }
-
-  #chat-input-row {
-    display: flex;
-    gap: 8px;
-    padding: 12px;
-    border-top: 1px solid #E4E8F0;
-    background: white;
-  }
-  #chat-input {
-    flex: 1;
-    border: 1px solid #D0D8E8;
-    border-radius: 6px;
-    padding: 9px 12px;
-    font-size: 14px;
-    font-family: 'Source Sans 3', sans-serif;
-    outline: none;
-    color: var(--dark);
-  }
-  #chat-input:focus { border-color: var(--rust); }
-  #chat-send {
-    background: var(--rust);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 9px 14px;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 600;
-  }
-  #chat-send:hover { opacity: 0.9; }
-
-  @media (max-width: 480px) {
-    #chat-window {
-      width: calc(100vw - 24px);
-      right: 12px;
-      bottom: 88px;
-    }
-  }
-</style>
-
 <div id="chat-bubble" onclick="toggleChat()">
-  <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
     <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
   </svg>
 </div>
@@ -821,207 +601,18 @@
 </div>
 
 <script>
-  const WORKER_URL = 'https://theis-chat.merrittbt4.workers.dev'; // swap in once Cloudflare Worker is deployed
-
-  const messages = [];
-  let isOpen = false;
-
-  function toggleChat() {
-    isOpen = !isOpen;
-    document.getElementById('chat-window').classList.toggle('open', isOpen);
-    if (isOpen && messages.length === 0) {
-      addMessage('bot', "Hi there! I'm here to help with questions about our plumbing services, pricing, or to get you set up with a free estimate. What can I help you with?");
-    }
-  }
-
-  function addMessage(role, text) {
-    messages.push({ role, text });
-    renderMessages();
-  }
-
-  function renderMessages() {
-    const container = document.getElementById('chat-messages');
-    container.innerHTML = '';
-    messages.forEach(m => {
-      const div = document.createElement('div');
-      div.className = 'msg ' + (m.role === 'bot' ? 'bot' : 'user');
-      div.textContent = m.text;
-      container.appendChild(div);
-    });
-    container.scrollTop = container.scrollHeight;
-  }
-
-  function showTyping() {
-    const container = document.getElementById('chat-messages');
-    const div = document.createElement('div');
-    div.className = 'msg typing';
-    div.id = 'typing-indicator';
-    div.textContent = 'Typing…';
-    container.appendChild(div);
-    container.scrollTop = container.scrollHeight;
-  }
-
-  function removeTyping() {
-    const t = document.getElementById('typing-indicator');
-    if (t) t.remove();
-  }
-
-  async function sendMessage() {
-    const input = document.getElementById('chat-input');
-    const text = input.value.trim();
-    if (!text) return;
-    input.value = '';
-    addMessage('user', text);
-    showTyping();
-
-    // Build conversation history for the worker
-    const history = messages
-      .map(m => ({ role: m.role === 'bot' ? 'assistant' : 'user', content: m.text }));
-
-    try {
-      const res = await fetch(WORKER_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: history })
-      });
-      const data = await res.json();
-      removeTyping();
-      const reply = data?.content?.[0]?.text || data?.reply || "Sorry, I didn't catch that — feel free to call us at (805) 660-9761.";
-      addMessage('bot', reply);
-    } catch (err) {
-      removeTyping();
-      addMessage('bot', "Something went wrong on my end. Give us a call at (805) 660-9761 and we'll get you sorted.");
-    }
-  }
+const WORKER_URL = 'WORKER_URL_HERE';
+const messages = [];
+let isOpen = false;
+function toggleChat(){isOpen=!isOpen;document.getElementById('chat-window').classList.toggle('open',isOpen);if(isOpen&&messages.length===0){addMessage('bot',"Hi there! I can help with questions about our plumbing services or get you set up with a free estimate. What do you need?");}}
+function addMessage(role,text){messages.push({role,text});renderMessages();}
+function renderMessages(){const c=document.getElementById('chat-messages');c.innerHTML='';messages.forEach(m=>{const d=document.createElement('div');d.className='msg '+(m.role==='bot'?'bot':'user');d.textContent=m.text;c.appendChild(d);});c.scrollTop=c.scrollHeight;}
+function showTyping(){const c=document.getElementById('chat-messages');const d=document.createElement('div');d.className='msg typing';d.id='typing-indicator';d.textContent='Typing…';c.appendChild(d);c.scrollTop=c.scrollHeight;}
+function removeTyping(){const t=document.getElementById('typing-indicator');if(t)t.remove();}
+async function sendMessage(){const input=document.getElementById('chat-input');const text=input.value.trim();if(!text)return;input.value='';addMessage('user',text);showTyping();const history=messages.map(m=>({role:m.role==='bot'?'assistant':'user',content:m.text}));try{const res=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:history})});const data=await res.json();removeTyping();addMessage('bot',data.reply||"Sorry, something went wrong. Give us a call at (805) 660-9761.");}catch{removeTyping();addMessage('bot',"Something went wrong. Give us a call at (805) 660-9761.");}}
+const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*100);obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}});});
 </script>
-
 </body>
 </html>
-<style>
-@media (max-width: 768px) {
-  /* NAV */
-  nav {
-    padding: 16px 20px;
-  }
-  .nav-links {
-    display: none;
-  }
-
-  /* HERO */
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  .hero-left {
-    padding: 48px 20px;
-  }
-  .hero-headline {
-    font-size: 34px;
-  }
-  .hero-right {
-    min-height: 220px;
-  }
-  .hero-badge {
-    width: 80px;
-    height: 80px;
-    bottom: 16px;
-    right: 16px;
-  }
-  .hero-badge-num { font-size: 20px; }
-  .hero-cta-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .btn-primary, .btn-ghost {
-    text-align: center;
-  }
-
-  /* TRUST BAR */
-  .trust-bar {
-    padding: 16px 20px;
-    gap: 16px;
-    justify-content: flex-start;
-  }
-  .trust-item {
-    font-size: 13px;
-    width: calc(50% - 8px);
-  }
-
-  /* INTRO */
-  .intro {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 56px 20px;
-  }
-  .intro-left h2 { font-size: 28px; }
-
-  /* STAT CARDS */
-  .intro-right {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* SERVICES */
-  .services {
-    padding: 56px 20px;
-  }
-  .services-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  /* BEFORE/AFTER */
-  .work {
-    padding: 56px 20px;
-  }
-  .ba-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* TESTIMONIAL */
-  .testimonial-section {
-    padding: 56px 20px;
-  }
-  .testimonial-quote {
-    font-size: 20px;
-  }
-
-  /* CTA FOOTER */
-  .cta-footer {
-    grid-template-columns: 1fr;
-    padding: 48px 20px;
-    text-align: center;
-  }
-  .cta-footer h2 { font-size: 26px; }
-  .cta-footer-btns {
-    align-items: center;
-  }
-  .btn-white { width: 100%; }
-
-  /* FOOTER */
-  footer {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-    padding: 24px 20px;
-  }
-
-  /* SECTION HEADERS */
-  .section-header { padding: 0 0 8px; }
-  .section-title { font-size: 26px; }
-}
-
-@media (max-width: 480px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-  .trust-item {
-    width: 100%;
-  }
-  .intro-right {
-    grid-template-columns: 1fr;
-  }
-  .stat-card:first-child {
-    grid-column: 1;
-  }
-}
-</style>
